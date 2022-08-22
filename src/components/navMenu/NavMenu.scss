@@ -1,0 +1,60 @@
+.nav-menu {
+  // background-color: rgb(234, 239, 239);
+  width: 89%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  &__contnet {
+    margin-left: 3rem;
+    width: 30rem;
+    height: 3rem;
+    // background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    display: flex;
+    border-radius: 10px;
+    padding: 2px;
+    // border: 1px solid;
+    box-shadow: 5px 5px 4px #888888;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px #000000e2;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 1px 1px 14px 2px #000000e2;
+    }
+  }
+  &__input {
+    display: flex;
+    background-color: none;
+    // border-color: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 20%;
+    padding: 0px;
+    margin: 0px;
+    border-width: 0px;
+    cursor: pointer;
+    border: none;
+    // border-bottom: 1px solid;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+  &__btn {
+    width: 10%;
+    height: 100%;
+    border: none;
+    border-radius: 20%;
+  }
+}
+
+.title {
+  margin-left: 2rem;
+}
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+}
