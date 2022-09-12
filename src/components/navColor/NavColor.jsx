@@ -1,8 +1,12 @@
 import { Component } from "react/cjs/react.development";
+import { connect } from "react-redux";
+
+import { addColor } from "../../store/action";
+
 import "./NavColor.scss";
 class NavBar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       check: false,
     };
@@ -15,6 +19,7 @@ class NavBar extends Component {
   }
 
   render() {
+    // console.log(this.props.notesReducer);
     return (
       <>
         <div className="list">
@@ -27,10 +32,22 @@ class NavBar extends Component {
           </button>
           {this.state.check && (
             <ul className="lists">
-              <div className="lists__green bounce-in-top"></div>
-              <div className="lists__yellow bounce-in-top"></div>
-              <div className="lists__blue bounce-in-top"></div>
-              <div className="lists__white bounce-in-top"></div>
+              <div
+                className="lists__green bounce-in-top"
+                onClick={() => this.props.addColor({ color: "#2ECC40" })}
+              />
+              <div
+                className="lists__purple bounce-in-top"
+                onClick={() => this.props.addColor({ color: "#b10dc9" })}
+              />
+              <div
+                className="lists__blue bounce-in-top"
+                onClick={() => this.props.addColor({ color: "#0074d9" })}
+              />
+              <div
+                className="lists__greenyellow bounce-in-top"
+                onClick={() => this.props.addColor({ color: "greenyellow" })}
+              />
             </ul>
           )}
         </div>
@@ -38,4 +55,22 @@ class NavBar extends Component {
     );
   }
 }
-export default NavBar;
+
+const mapStateToProps = ({
+  notesReducer,
+  // : { count, todoss, notes }
+}) => {
+  return {
+    notesReducer,
+    // count,
+    // todoss,
+    // notes,
+  };
+};
+
+const mapDispatchToProps = {
+  // addNote,
+  addColor,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

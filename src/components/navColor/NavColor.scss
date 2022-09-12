@@ -55,25 +55,25 @@
   &__green {
     width: 2rem;
     height: 2rem;
-    background-color: rgb(7, 111, 230);
+    background-color: #2ecc40;
     border-radius: 50%;
   }
-  &__yellow {
+  &__purple {
     width: 2rem;
     height: 2rem;
-    background-color: orange;
+    background-color: #b10dc9;
     border-radius: 50%;
   }
   &__blue {
     width: 2rem;
     height: 2rem;
-    background-color: greenyellow;
+    background-color: #0074d9;
     border-radius: 50%;
   }
-  &__white {
+  &__greenyellow {
     width: 2rem;
     height: 2rem;
-    background-color: rgba(240, 33, 33, 0.656);
+    background-color: greenyellow;
     border-radius: 50%;
   }
 }

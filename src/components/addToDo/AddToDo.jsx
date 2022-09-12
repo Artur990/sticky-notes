@@ -1,14 +1,9 @@
-// import ToDoItems from "../todos/ToDoList";
-import { Component } from "react";
-// import Calendar from "react-calendar";
-// import "react-calendar/dist/Calendar.css";
-import "./AddToDo.scss";
-// import Counter from "../../store/Counter";
 import { connect } from "react-redux";
-// import { INCREMENT } from "../../store/actions/counter";
-// import { addTodo } from "../../store/actions";
-// import { ADDNOTE } from "../../store/actions/counter";
+import { Component } from "react";
+
 import { addNote } from "../../store/action";
+
+import "./AddToDo.scss";
 
 class AddTodo extends Component {
   constructor() {
@@ -79,13 +74,6 @@ class AddTodo extends Component {
               onChange={this.handlerTitle.bind(this)}
               value={this.state.valueTitle}
             />
-            {/* <input
-            className="note__content"
-            type="text"
-            placeholder="Dodaj zadanie"
-            onChange={this.handlerContent}
-            // value={valueContent}
-          ></input> */}
             <button
               className="note__btn "
               onClick={this.submitHandler.bind(this)}
@@ -108,7 +96,7 @@ const mapStateToProps = ({ notesReducer: { count, todoss } }) => {
 };
 
 const mapDispatchToProps = {
-  addNote, 
+  addNote,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);

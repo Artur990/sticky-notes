@@ -87,4 +87,21 @@
     justify-content: center;
     z-index: 10;
   }
+  .note-item__content__star1 {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgb(230, 113, 113);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
 }
+// .note-item__content___star_icon1-fav {
+//   background-color: greenyellow;
+//   color: wheat;
+// }
