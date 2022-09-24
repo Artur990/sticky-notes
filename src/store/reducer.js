@@ -16,16 +16,13 @@ const counterReducer = (
   state = JSON.parse(localStorage.getItem("isFavv")) ?? initialState,
   action
 ) => {
-  console.log(state);
   switch (action.type) {
     case ADD_COLOR: {
-      console.log(state);
       const results = { ...state, notes: [...state.notes, action.payload] };
       localStorage.setItem("isFavv", JSON.stringify(results));
       return results;
     }
     case REMOVE_NOTE: {
-      console.log(state);
       const results = {
         ...state,
         notes: state.notes.filter((e) => e.id !== action.payload),
@@ -34,8 +31,8 @@ const counterReducer = (
       return results;
     }
     case ADD_TO_FAV: {
-      console.log(state);
-      return {
+      console.log(action.payload1.isFav);
+      const results = {
         notes: [...state.notes].filter((e) =>
           e.id === action.payload1.id
             ? (e.isFav = action.payload1.isFav)
@@ -43,19 +40,21 @@ const counterReducer = (
         ),
         ...state,
       };
+      localStorage.setItem("isFavv", JSON.stringify(results));
+      return results;
     }
     case UP_DATE_TEXT: {
-      console.log(state);
-      return {
+      const results = {
         ...state,
         notes: state.notes.filter((e) =>
           e.id === action.payload.id ? (e.text = action.payload.text) : e.text
         ),
       };
+      localStorage.setItem("isFavv", JSON.stringify(results));
+      return results;
     }
     case CHANGE_TO_WRITE: {
-      console.log(state);
-      return {
+      const results = {
         ...state,
         notes: state.notes.filter((e) =>
           e.id === action.payload.id
@@ -64,6 +63,8 @@ const counterReducer = (
         ),
         ...state,
       };
+      localStorage.setItem("isFavv", JSON.stringify(results));
+      return results;
     }
     default:
       return state;

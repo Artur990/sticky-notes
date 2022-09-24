@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { addColor } from "../../store/action";
 
 import "./NavColor.scss";
+
 class NavBar extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +12,6 @@ class NavBar extends Component {
       check: false,
     };
   }
-  // {check: !this.state.check}
   handlerButton() {
     this.setState((prevState) => ({
       check: !prevState.check,
@@ -19,7 +19,6 @@ class NavBar extends Component {
   }
 
   render() {
-    // console.log(this.props.notesReducer);
     return (
       <>
         <div className="list">
@@ -56,20 +55,13 @@ class NavBar extends Component {
   }
 }
 
-const mapStateToProps = ({
-  notesReducer,
-  // : { count, todoss, notes }
-}) => {
+const mapStateToProps = ({ notesReducer }) => {
   return {
     notesReducer,
-    // count,
-    // todoss,
-    // notes,
   };
 };
 
 const mapDispatchToProps = {
-  // addNote,
   addColor,
 };
 

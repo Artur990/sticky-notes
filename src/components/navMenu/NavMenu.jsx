@@ -90,14 +90,13 @@ class NavBar extends Component {
             />
           </span>
         </div>
-        <div style={{ display: "flex" }}>
-          <h1 className="title">Notes</h1>
-          <input
-            type="checkbox"
-            // value={value}
-            onChange={this.handlerChecBox.bind(this)}
-          />
-          <h3>Ulubione</h3>
+        <div className="nav-fav">
+          <h1 className="nav-fav__title">Notes</h1>
+          <label class="nav-fav__switch">
+            <input type="checkbox" onChange={this.handlerChecBox.bind(this)} />
+            <span class="slider round"></span>
+          </label>
+          <h3 style={{ padding: "0.7rem" }}> Ulubione</h3>
         </div>
 
         <div className="main-content">

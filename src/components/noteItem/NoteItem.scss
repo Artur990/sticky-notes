@@ -1,6 +1,6 @@
 .note-item {
-  width: 300px;
-  height: 300px;
+  width: 18rem;
+  height: 18rem;
   margin: 2rem;
   margin-top: 2rem;
   border-radius: 1.5rem;
@@ -15,11 +15,14 @@
     width: 95%;
     height: 70%;
     background-color: rgba(240, 248, 255, 0);
+    color: black;
     border: none;
     font-size: 2rem;
     resize: vertical;
     min-height: 80%;
     max-height: 100%;
+    font-family: "Bree Serif", serif;
+    font-family: "Montserrat", sans-serif;
 
     &:focus-visible {
       outline: none;
@@ -50,29 +53,6 @@
         border-radius: 50%;
       }
     }
-    // &__star {
-    //   width: 2.5rem;
-    //   height: 2.5rem;
-    //   background-color: rgb(255, 255, 255);
-    //   border-radius: 50%;
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: center;
-    //   position: relative;
-    //   bottom: 220px;
-    //   left: 90px;
-
-    //   z-index: 10;
-    //   //   bottom: 50;
-    //   //   left: 4;
-    // &__icon {
-    //   color: rgb(248, 248, 248);
-    //   background-color: rgb(120, 116, 116);
-    //   width: 1.5rem;
-    //   height: 1.5rem;
-    //   border-radius: 50%;
-    // }
-    // }
   }
   .note-item__content__star {
     position: absolute;
@@ -101,7 +81,16 @@
     z-index: 10;
   }
 }
-// .note-item__content___star_icon1-fav {
-//   background-color: greenyellow;
-//   color: wheat;
-// }
+
+@media only screen and (max-width: 768px) {
+  .note-item {
+    width: 21rem;
+    height: 21rem;
+  }
+}
+@media only screen and (max-width: 468px) {
+  .note-item {
+    width: 18rem;
+    height: 18rem;
+  }
+}
