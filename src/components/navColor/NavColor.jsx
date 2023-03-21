@@ -11,12 +11,16 @@ class NavBar extends Component {
     this.state = {
       check: false,
     };
+    this.handlerButton = this.handlerButton.bind(this);
   }
-  handlerButton() {
+  handlerButton = () => {
     this.setState((prevState) => ({
       check: !prevState.check,
     }));
-  }
+  };
+  addColor = (color) => {
+    this.props.addColor({ color });
+  };
 
   render() {
     return (
@@ -25,7 +29,7 @@ class NavBar extends Component {
           <h2>Docket</h2>
           <button
             className="list__btn rotate-center"
-            onClick={this.handlerButton.bind(this)}
+            onClick={this.handlerButton}
           >
             +
           </button>
@@ -33,19 +37,19 @@ class NavBar extends Component {
             <ul className="lists">
               <div
                 className="lists__green bounce-in-top"
-                onClick={() => this.props.addColor({ color: "#2ECC40" })}
+                onClick={() => this.addColor("#2ECC40")}
               />
               <div
                 className="lists__purple bounce-in-top"
-                onClick={() => this.props.addColor({ color: "#b10dc9" })}
+                onClick={() => this.addColor("#b10dc9")}
               />
               <div
                 className="lists__blue bounce-in-top"
-                onClick={() => this.props.addColor({ color: "#0074d9" })}
+                onClick={() => this.addColor("#0074d9")}
               />
               <div
                 className="lists__greenyellow bounce-in-top"
-                onClick={() => this.props.addColor({ color: "greenyellow" })}
+                onClick={() => this.addColor("greenyellow")}
               />
             </ul>
           )}

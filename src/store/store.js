@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
-import counterReducer from "./reducer";
+import notesReducer from "./reducer";
 
 const rootReducer = combineReducers({
-  notesReducer: counterReducer,
+  notesReducer: notesReducer,
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

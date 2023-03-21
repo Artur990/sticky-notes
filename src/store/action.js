@@ -27,7 +27,7 @@ const addToFav = (o) => ({
     id: o.obj.id,
     color: o.obj.color,
     text: o.text,
-    isFav: o.obj.isFav ,
+    isFav: o.obj.isFav,
     date: o.obj.date,
     toWrite: false,
   },
@@ -37,10 +37,12 @@ const upDateText = (e) => ({ type: UP_DATE_TEXT, payload: e });
 const changeFav = (e) => ({ type: CHANGE_FAV, payload: e });
 const changeToWrite = (e) => ({ type: CHANGE_TO_WRITE, payload: e });
 
-export { removeNote };
-export { addNote };
-export { addColor };
-export { addToFav };
-export { upDateText };
-export { changeFav };
-export { changeToWrite };
+export {
+  removeNote,
+  addNote,
+  addColor,
+  addToFav,
+  upDateText,
+  changeFav,
+  changeToWrite,
+};

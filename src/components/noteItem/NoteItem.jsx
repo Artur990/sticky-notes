@@ -8,7 +8,6 @@ import {
   removeNote,
   addToFav,
   upDateText,
-  changeFav,
   changeToWrite,
 } from "../../store/action";
 
@@ -21,8 +20,8 @@ export class NoteItem extends Component {
       toWrite: false,
       note: this.props.note,
       isFav: false,
-      // toWrite: false,
     };
+    this.onHandlerText = this.onHandlerText.bind(this);
   }
 
   onHandlerText = (e) => {
@@ -34,8 +33,6 @@ export class NoteItem extends Component {
   };
 
   render() {
-    console.log(this.state.isFav);
-    // console.log(this.state.toWrite);
     return (
       <div
         className="note-item"
@@ -44,9 +41,9 @@ export class NoteItem extends Component {
         <textarea
           className="note-item__input"
           name="w3review"
-          rows="3"
-          cols="40"
-          onChange={this.onHandlerText.bind(this)}
+          rows={3}
+          cols={40}
+          onChange={this.onHandlerText}
           value={this.props.note.text}
           readOnly={this.state.toWrite}
         />
@@ -133,11 +130,11 @@ export class NoteItem extends Component {
   }
 }
 NoteItem.propTypes = {
-  color: PropTypes.string,
-  text: PropTypes.string,
-  isFav: PropTypes.bool,
-  date: PropTypes.string,
-  toWrite: PropTypes.bool,
+  color: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  isFav: PropTypes.bool.isRequired,
+  date: PropTypes.string.isRequired,
+  toWrite: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = ({ notesReducer: { notes } }) => {
