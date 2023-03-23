@@ -80,11 +80,10 @@ class NavBar extends Component {
         </div>
         <div className="main-content">
           {this.state.check &&
-            this.convert().map((note) => {
-              if (note.isFav === true) {
-                return <NoteItem note={note} key={note.id} />;
-              }
-            })}
+            this.convert().map(
+              (note) =>
+                note.isFav === true && <NoteItem note={note} key={note.id} />
+            )}
         </div>
       </div>
     );
